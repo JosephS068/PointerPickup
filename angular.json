@@ -39,7 +39,8 @@
             "styles": [
               "node_modules/leaflet/dist/leaflet.css",
               "src/styles.scss"
-            ]
+            ],
+            "baseHref": "/pointer-pickup/"
           },
           "configurations": {
             "production": {
@@ -79,6 +80,9 @@
         },
         "test": {
           "builder": "@angular/build:unit-test"
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy"
         }
       }
     }
