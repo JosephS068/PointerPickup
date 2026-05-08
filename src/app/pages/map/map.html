@@ -1,0 +1,18 @@
+<div id="background_image"></div>
+
+<div id="map_application">
+    <div id="top_row">
+        <div id="map"></div>
+        
+        <div id="selection_list">
+            <div *ngFor="let loc of locations" class="map_item" (click)="onLocationClicked(loc)">
+                <p>{{ loc.Name }} : {{ loc.Date | date: 'shortDate' }}</p>
+            </div>
+        </div>
+    </div>
+    <div id="images">
+        <div id="main_image">
+            <img/>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,47 @@
+#intro {
+  display: flex;
+  flex-direction: column;   /* keeps the two <p> tags stacked */
+  justify-content: center;  /* vertical centering */
+  align-items: center;      /* horizontal centering */
+  
+  height: 100vh;            /* full viewport height */
+  text-align: center;       /* optional: centers text inside */
+}
+
+#content {
+    padding: 50vh;
+}
+
+#mainImage {
+    position: absolute;
+    filter: blur(4px)  brightness(0.4);
+    height: 100vh; 
+    width: 100vw; 
+    z-index: -1;
+}
+
+#title {
+    user-select: none;
+    font-family: Papyrus;
+    font-size: 100px;
+    color: white; 
+    padding: 10px 20px; /* adds space around the text */ 
+    display: inline-block; /* keeps background tight around text */
+}
+
+#subtitle {
+    font-size: 28px;
+    color: white; 
+    padding: 10px 20px; /* adds space around the text */ 
+    display: inline-block; /* keeps background tight around text */
+}
+
+.green { 
+    color: #0e8c10;
+} 
+
+.blue { 
+    color: #338ebf;
+}
+
+

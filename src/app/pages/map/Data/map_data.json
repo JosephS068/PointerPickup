@@ -1,0 +1,23 @@
+[
+  {
+    "Name": "Division Street",
+    "Date": "2026-04-20",
+    "latitude": 44.5236,
+    "longitude": -89.5746,
+    "image_path": "/images/sunset_lookout.jpg"
+  },
+  {
+    "Name": "Main Street",
+    "Date": "2026-03-11",
+    "latitude": 44.5102,
+    "longitude": -89.6001,
+    "image_path": "/images/river_bend.jpg"
+  },
+  {
+    "Name": "Down Town",
+    "Date": "2026-01-28",
+    "latitude": 44.5330,
+    "longitude": -89.5740,
+    "image_path": "/images/downtown_plaza.jpg"
+  }
+]

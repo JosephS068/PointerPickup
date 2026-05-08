@@ -1,0 +1,69 @@
+#map {
+  height: 400px;   // or 100vh if you want full screen
+  width: 100%;
+  border-radius: 10px;
+}
+
+#background_image {
+    position: fixed;     /* take it out of the layout */
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    background-image: url("../../../assets/Background/Map.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    z-index: -1;         /* put it behind all other content */
+}
+
+
+#map_application {
+    justify-content: center;
+    align-items: center;
+    
+
+    background: rgba(190, 209, 209, 0.6); /* same color, but transparent */
+    backdrop-filter: blur(8px);           /* the glass effect */
+    -webkit-backdrop-filter: blur(8px);   /* Safari support */
+
+    padding: 20px 40px;
+    margin: 30px 100px 0 100px; /* remove the big margins so it doesn’t float oddly */
+    border-radius: 10px; /* optional, looks nice */
+}
+
+#top_row {
+  display: flex;
+  flex-direction: row;
+}
+
+#selection_list {
+  margin-left: 30px;
+  min-width: 200px;
+
+  border: 1px solid rgba(255, 255, 255, 0.35); /* soft gray/white border */
+  border-radius: 10px;                         /* smooth corners */
+  backdrop-filter: blur(4px);                  /* subtle glass effect */
+  -webkit-backdrop-filter: blur(4px);
+}
+
+
+.map_item {
+  padding: 5px 5px;
+  margin-bottom: 5px;
+  border-radius: 8px;
+  transition: all 0.25s ease;
+  cursor: pointer; /* makes the mouse turn into a pointer */
+}
+
+/* Hover effect */
+.map_item:hover {
+  background: rgba(255, 255, 255, 0.25); /* glossy white tint */
+  backdrop-filter: blur(6px);            /* glass blur */
+  -webkit-backdrop-filter: blur(6px);    /* Safari support */
+  transform: translateY(-2px);           /* subtle lift */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* soft glow */
+}

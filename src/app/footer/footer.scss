@@ -1,0 +1,24 @@
+#footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(190, 209, 209, 0.6); /* same color, but transparent */
+    backdrop-filter: blur(8px);           /* the glass effect */
+    -webkit-backdrop-filter: blur(8px);   /* Safari support */
+
+    padding: 20px 40px;
+
+    margin: 30px 100px 0 100px; /* remove the big margins so it doesn’t float oddly */
+    border-radius: 10px; /* optional, looks nice */
+}
+
+
+.social_icon {
+    width:30px;
+    height: 30px;
+}
+
+#email_link {
+    padding-right: 100px;
+}
