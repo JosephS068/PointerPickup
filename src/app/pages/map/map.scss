@@ -31,32 +31,63 @@
     -webkit-backdrop-filter: blur(8px);   /* Safari support */
 
     padding: 20px 40px;
-    margin: 30px 100px 0 100px; /* remove the big margins so it doesn’t float oddly */
+    
     border-radius: 10px; /* optional, looks nice */
+}
+
+@media (min-width: 1024px) { 
+    #map_application{
+        margin: 30px 100px 0 100px; /* remove the big margins so it doesn’t float oddly */
+    }
 }
 
 #top_row {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+}
+
+@media (min-width: 1024px) { 
+    #top_row{
+        flex-direction: row;
+    }
 }
 
 #selection_list {
-  margin-left: 30px;
   min-width: 200px;
 
   border: 1px solid rgba(255, 255, 255, 0.35); /* soft gray/white border */
   border-radius: 10px;                         /* smooth corners */
   backdrop-filter: blur(4px);                  /* subtle glass effect */
   -webkit-backdrop-filter: blur(4px);
+  overflow-y: auto;      /* <— enables vertical scrolling */
 }
 
+// mobile only
+@media (max-width: 1024px) { 
+    #selection_list{
+      margin-top: 10px;
+      max-height: 200px;     /* <— sets the scroll boundary */
+    }
+}
+
+@media (min-width: 1024px) { 
+    #selection_list{
+      margin-left: 30px;
+    }
+}
 
 .map_item {
   padding: 5px 5px;
-  margin-bottom: 5px;
   border-radius: 8px;
   transition: all 0.25s ease;
   cursor: pointer; /* makes the mouse turn into a pointer */
+}
+
+@media (min-width: 1024px) { 
+    .map_item {
+        flex-direction: row;
+        margin-bottom: 5px;
+    }
 }
 
 /* Hover effect */
