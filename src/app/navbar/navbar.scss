@@ -3,17 +3,21 @@
     justify-content: center; /* centers items horizontally */ 
     align-items: center; 
     background-color: #bed1d1;
-    align-items: stretch;
 }
 
 #title {
     user-select: none;
-    //font-family: Papyrus;
-    font-size: 50px;
+    font-size: 20px;
     color: white; 
     display: inline-block; /* keeps background tight around text */
     margin: 0px;
-    margin-right: 20vw;
+}
+
+@media (min-width: 1024px) { 
+    #title {
+        font-size: 50px;
+        margin-right: 20vw;
+    }
 }
 
 .green { 
@@ -47,12 +51,28 @@
     align-items: center; 
 }
 
+// No button text for mobile.
 .button_text{
-    padding-left: 10px;
-    font-size: 14px;
+    display: none;
 }
 
+@media (min-width: 1024px) { 
+    .button_text{
+        padding-left: 10px;
+        font-size: 14px;
+        display: block;
+    }
+}
+
+// bigger icons for mobile
 .nav_icon {
-    width:30px;
-    height: 30px;
+    width:40px;
+    height: 40px;
+}
+
+@media (min-width: 1024px) { 
+    .nav_icon {
+        width:50px;
+        height: 50px;
+    }
 }

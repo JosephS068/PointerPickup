@@ -24,6 +24,14 @@
     -webkit-backdrop-filter: blur(8px);   /* Safari support */
 
     padding: 20px 40px;
-    margin: 30px 100px 0 100px; /* remove the big margins so it doesn’t float oddly */
+    
     border-radius: 10px; /* optional, looks nice */
+    width: 100wv;
+}
+
+
+@media (min-width: 1024px) { 
+    #content{
+        margin: 30px 100px 0 100px; /* remove the big margins so it doesn’t float oddly */
+    }
 }

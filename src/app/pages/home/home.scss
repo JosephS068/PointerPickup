@@ -25,14 +25,21 @@
     //font-family: Papyrus;
     font-size: 100px;
     color: white; 
-    padding: 10px 20px; /* adds space around the text */ 
+    padding: 10px 0px; /* adds space around the text */ 
     display: inline-block; /* keeps background tight around text */
+    margin: 0px;
+}
+
+@media (min-width: 1024px) { 
+    #title{
+        margin: 30px 100px 0 100px; /* remove the big margins so it doesn’t float oddly */
+    }
 }
 
 #subtitle {
     font-size: 28px;
     color: white; 
-    padding: 10px 20px; /* adds space around the text */ 
+    padding: 0px 20px; /* adds space around the text */ 
     display: inline-block; /* keeps background tight around text */
 }
 
