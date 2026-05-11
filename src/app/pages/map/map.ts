@@ -5,6 +5,16 @@ import mapData from './Data/map_data.json';
 import { LocationEntry } from './location-entry';
 
 const greenLeafIcon = L.icon({
+  iconUrl: 'assets/map/leaf-green.png',
+  shadowUrl: 'assets/map/leaf-shadow.png',
+  iconSize: [29, 71],
+  shadowSize: [38, 48],
+  iconAnchor: [14, 71],
+  shadowAnchor: [0, 48],
+  popupAnchor: [0, -71]
+});
+
+const orangeLeafIcon = L.icon({
   iconUrl: 'assets/map/leaf-orange.png',
   shadowUrl: 'assets/map/leaf-shadow.png',
   iconSize: [29, 71],
@@ -24,20 +34,28 @@ const greenLeafIcon = L.icon({
 export class Map implements AfterViewInit {
   locations: LocationEntry[] = [];
   private markers: L.Marker[] = [];
+  private lastClickedMarker?: L.Marker;
 
   onLocationClicked(location: LocationEntry) {
-    const marker = this.markers.find(
-      m => m.getLatLng().lat === location.latitude && m.getLatLng().lng === location.longitude
-    );
+    if(this.lastClickedMarker) {
+      this.lastClickedMarker.setIcon(orangeLeafIcon)
+    }
+    
+    const marker = location.Marker;
     if (marker) {
       marker.openPopup();
+      marker.setIcon(greenLeafIcon);
     }
+
+    this.lastClickedMarker = marker;
   }
 
   ngOnInit() {
     // Load Map Data
+    let id = 1;
     mapData.forEach(item => {
       const location = new LocationEntry(
+        id,
         item.Name,
         new Date(item.Date),
         item.latitude,
@@ -46,6 +64,8 @@ export class Map implements AfterViewInit {
       )
 
       this.locations.push(location);
+      
+      id++;
     });
   }
 
@@ -57,11 +77,22 @@ export class Map implements AfterViewInit {
     }).addTo(map);
 
     this.locations.forEach(location => {
-      const marker = L.marker([location.latitude, location.longitude], { icon: greenLeafIcon })
+      const marker = L.marker([location.latitude, location.longitude], { icon: orangeLeafIcon })
       .addTo(map)
-      .bindPopup(location.Name)
+      .bindPopup(
+        `
+          <div style="text-align:center;">
+            <h3>${location.Name}</h3>
+            <img src="${"/Data/Images/"+ location.ID + ".jpeg"}" 
+                style="width:150px; height:auto; margin-top:8px; border-radius:6px;">
+          </div>
+        `
+      )
       .on('click', () => this.onLocationClicked(location));
       this.markers.push(marker);
+
+      // Keep track of the marker 
+      location.Marker = marker;
     })
   }
 }

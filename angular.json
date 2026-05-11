@@ -34,6 +34,11 @@
                 "input": "public",
                 "glob": "**/*",
                 "output": "/"
+              },
+              {
+                "input": "src/app/pages/map/Data/Images",
+                "glob": "**/*",
+                "output": "/Data/Images/"
               }
             ],
             "styles": [
